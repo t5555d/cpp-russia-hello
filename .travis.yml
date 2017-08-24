@@ -3,7 +3,7 @@ language: cpp
 
 script:
   - mkdir build && cd build
-  - cmake .. -DCMAKE_CXX_COMPILER=$CMAKE_CXX_COMPILER
+  - cmake .. -DCMAKE_CXX_COMPILER=$CMAKE_CXX_COMPILER -DCMAKE_BUILD_TYPE=$BUILD_TYPE
   - cmake --build .
   - ./hello
 
@@ -16,7 +16,8 @@ matrix:
           packages:
           - g++-4.9
       env:
-        - CMAKE_CXX_COMPILER=g++-4.9
+        - CMAKE_CXX_COMPILER=g++-4.9 BUILD_TYPE=Debug
+        - CMAKE_CXX_COMPILER=g++-4.9 BUILD_TYPE=Release
     - addons:
         apt:
           sources:
@@ -24,7 +25,8 @@ matrix:
           packages:
           - g++-5
       env:
-        - CMAKE_CXX_COMPILER=g++-5
+        - CMAKE_CXX_COMPILER=g++-5 BUILD_TYPE=Debug
+        - CMAKE_CXX_COMPILER=g++-5 BUILD_TYPE=Release
     - addons:
         apt:
           sources:
@@ -32,7 +34,8 @@ matrix:
           packages:
           - g++-6
       env:
-        - CMAKE_CXX_COMPILER=g++-6
+        - CMAKE_CXX_COMPILER=g++-6 BUILD_TYPE=Debug
+        - CMAKE_CXX_COMPILER=g++-6 BUILD_TYPE=Release
     - addons:
         apt:
           sources:
@@ -42,7 +45,8 @@ matrix:
           - clang-3.9
           - g++-6
       env:
-        - CMAKE_CXX_COMPILER=clang++-3.9
+        - CMAKE_CXX_COMPILER=clang++-3.9 BUILD_TYPE=Debug
+        - CMAKE_CXX_COMPILER=clang++-3.9 BUILD_TYPE=Release
     - addons:
         apt:
           sources:
@@ -52,4 +56,5 @@ matrix:
           - clang-4.0
           - g++-6
       env:
-        - CMAKE_CXX_COMPILER=clang++-4.0
+        - CMAKE_CXX_COMPILER=clang++-4.0 BUILD_TYPE=Debug
+        - CMAKE_CXX_COMPILER=clang++-4.0 BUILD_TYPE=Release
