@@ -17,6 +17,13 @@ matrix:
           - g++-4.9
       env:
         - CMAKE_CXX_COMPILER=g++-4.9 BUILD_TYPE=Debug
+    - addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          packages:
+          - g++-4.9
+      env:
         - CMAKE_CXX_COMPILER=g++-4.9 BUILD_TYPE=Release
     - addons:
         apt:
@@ -26,6 +33,13 @@ matrix:
           - g++-5
       env:
         - CMAKE_CXX_COMPILER=g++-5 BUILD_TYPE=Debug
+    - addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          packages:
+          - g++-5
+      env:
         - CMAKE_CXX_COMPILER=g++-5 BUILD_TYPE=Release
     - addons:
         apt:
@@ -35,6 +49,13 @@ matrix:
           - g++-6
       env:
         - CMAKE_CXX_COMPILER=g++-6 BUILD_TYPE=Debug
+    - addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          packages:
+          - g++-6
+      env:
         - CMAKE_CXX_COMPILER=g++-6 BUILD_TYPE=Release
     - addons:
         apt:
@@ -46,6 +67,15 @@ matrix:
           - g++-6
       env:
         - CMAKE_CXX_COMPILER=clang++-3.9 BUILD_TYPE=Debug
+    - addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          - llvm-toolchain-trusty-3.9
+          packages:
+          - clang-3.9
+          - g++-6
+      env:
         - CMAKE_CXX_COMPILER=clang++-3.9 BUILD_TYPE=Release
     - addons:
         apt:
@@ -57,4 +87,13 @@ matrix:
           - g++-6
       env:
         - CMAKE_CXX_COMPILER=clang++-4.0 BUILD_TYPE=Debug
+    - addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          - llvm-toolchain-trusty-4.0
+          packages:
+          - clang-4.0
+          - g++-6
+      env:
         - CMAKE_CXX_COMPILER=clang++-4.0 BUILD_TYPE=Release
