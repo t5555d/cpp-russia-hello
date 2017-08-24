@@ -4,7 +4,7 @@ install:
   - set PATH=%PATH%;%PYTHON%/Scripts/
   - pip.exe install conan
   - mkdir build && cd build
-  - conan install .. --build=missing -s build_type=%BUILD_TYPE% -s compiler="Visual Studio" -s compiler.version=%TOOLCHAIN_VERSION%
+  - conan install .. --build=missing -s build_type=%BUILD_TYPE% -s compiler="Visual Studio" -s compiler.version=%TOOLCHAIN_VERSION% -s compiler.runtime=%RUNTIME%
 
 build_script:
   - cmake -G "Visual Studio %TOOLCHAIN_VERSION% Win64" ..
@@ -20,13 +20,19 @@ environment:
   matrix:
     - TOOLCHAIN_VERSION: 14
       BUILD_TYPE: Release
+      RUNTIME: MD
     - TOOLCHAIN_VERSION: 12
       BUILD_TYPE: Release
+      RUNTIME: MD
     - TOOLCHAIN_VERSION: 10
       BUILD_TYPE: Release
+      RUNTIME: MD
     - TOOLCHAIN_VERSION: 14
       BUILD_TYPE: Debug
+      RUNTIME: MDd
     - TOOLCHAIN_VERSION: 12
       BUILD_TYPE: Debug
+      RUNTIME: MDd
     - TOOLCHAIN_VERSION: 10
       BUILD_TYPE: Debug
+      RUNTIME: MDd
